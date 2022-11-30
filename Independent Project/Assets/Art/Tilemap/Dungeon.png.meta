@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -2971,8 +2971,8 @@ TextureImporter:
       tilemap_packed 2_39: 184538638
       tilemap_packed 2_125: 952872270
       tilemap_packed 2_40: 1798061900
-      tilemap_packed 2_103: 1468991314
       tilemap_packed 2_111: -1876611712
+      tilemap_packed 2_103: 1468991314
       tilemap_packed 2_75: -776672736
       tilemap_packed 2_68: -1695268977
       tilemap_packed 2_23: 987746320
