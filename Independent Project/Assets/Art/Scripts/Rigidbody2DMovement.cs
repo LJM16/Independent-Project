@@ -53,11 +53,11 @@ public class Rigidbody2DMovement : MonoBehaviour
     }
     void FlipSprite()
     {
-        bool playerHasHorizontalSpeed = Mathf.Abs(_myRigidBody.velocity.x) > Mathf.Epsilon;
+        bool playerHasHorizontalSpeed = Mathf.Abs(_myRB.velocity.x) > Mathf.Epsilon;
 
         if (playerHasHorizontalSpeed)
         {
-            transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.velocity.x), 1f);
+            transform.localScale = new Vector2(Mathf.Sign(_myRB.velocity.x), 1f);
         }
     }
 }
