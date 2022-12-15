@@ -11,12 +11,14 @@ public class Rigidbody2DMovement : MonoBehaviour
 
     private Rigidbody2D _myRB;
     private Collider2D _myCollider;
+    private Animator _playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
        _myRB = GetComponent<Rigidbody2D>(); 
        _myCollider = GetComponent<Collider2D>();
+       _playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,13 @@ public class Rigidbody2DMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
 
         _myRB.velocity = new Vector2(horizontalInput * moveSpeed, _myRB.velocity.y);
+        if(Mathf.Abs(horizontalInput) > Mathf.Epsilon)
+        {
+            _playerAnim.SetBool("Running", true);
+        }
+        else{
+            isOnGround = false;
+        }
     }
 
     void PlayerJump()
@@ -49,6 +58,7 @@ public class Rigidbody2DMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
             _myRB.velocity = new Vector2(_myRB.velocity.x, jumpForce);
+            _playerAnim.SetBool("OnGround", true);
         }
     }
     void FlipSprite()
