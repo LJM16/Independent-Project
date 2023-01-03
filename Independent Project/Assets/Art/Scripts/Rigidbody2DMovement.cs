@@ -41,7 +41,7 @@ public class Rigidbody2DMovement : MonoBehaviour
             _playerAnim.SetBool("Running", true);
         }
         else{
-            isOnGround = false;
+            _playerAnim.SetBool("Running", false);
         }
     }
 
@@ -58,6 +58,9 @@ public class Rigidbody2DMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
             _myRB.velocity = new Vector2(_myRB.velocity.x, jumpForce);
+            _playerAnim.SetBool("OnGround", false);
+        }
+        else{
             _playerAnim.SetBool("OnGround", true);
         }
     }
