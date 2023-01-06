@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trampoline : MonoBehaviour
+public class JumpScript : MonoBehaviour
 {
     [SerializeField] float _bounceForce = 25f;
     [SerializeField] bool _canBounce = true;
@@ -19,7 +19,7 @@ public class Trampoline : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && _canBounce)
         {
             _canBounce = false;
-            _myAnim.SetTrigger("Bounce");
+            _myAnim.SetTrigger("Activation");
             Rigidbody2D playerRb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
             playerRb.velocity = new Vector2(playerRb.velocity.x, _bounceForce); 
         }
