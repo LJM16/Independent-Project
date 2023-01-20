@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] int _keyCount = 0;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject[] CollectibleObjects;
+    public void UpdateKeyCount(int amount)
     {
-        
+        _keyCount += amount;
+
+        for(int i = 0; i <_keyCount; i++)
+        {
+            CollectibleObjects[i].gameObject.SetActive(true);
+        }
     }
 }
